@@ -1,0 +1,128 @@
+package com.k_aakash.myapplication_6;
+
+import android.icu.text.DisplayContext;
+import android.os.Bundle;
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+import android.view.MotionEvent;
+import android.view.GestureDetector;
+import android.support.v4.view.GestureDetectorCompat;
+import android.widget.Button;
+
+
+public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener,
+        GestureDetector.OnDoubleTapListener {
+
+    private TextView Type_It;
+    private GestureDetectorCompat gesture;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        Button button1 =(Button)findViewById(R.id.button1 );
+            Type_It.setOnClickListener(
+                Type_It = (TextView) findViewById(R.id.Type_It);
+                this.gesture = new GestureDetectorCompat(this, this);
+                gesture.setOnDoubleTapListener(this);
+        );
+
+        Button button2 =(Button)findViewById(R.id.button2 );
+             Type_It.setOnClickListener(
+                Type_It = (TextView) findViewById(R.id.Type_It);
+                this.gesture = new GestureDetectorCompat(this, this);
+                gesture.setOnDoubleTapListener(this);
+        );
+
+        Button button3 =(Button)findViewById(R.id.button3 );
+            Type_It.setOnClickListener(
+                Type_It = (TextView) findViewById(R.id.Type_It);
+                this.gesture = new GestureDetectorCompat(this, this);
+                gesture.setOnDoubleTapListener(this);
+        );
+    }
+
+    @Override
+    public boolean onDoubleTap(MotionEvent motionEvent) {
+        Type_It.setText("onDoubleTap");
+        return true;
+    }
+
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        Type_It.setText("onSingleTapConfirmed");
+        return true;
+    }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent motionEvent) {
+        Type_It.setText("onDoubleTapEvent");
+        return true;
+    }
+
+    @Override
+    public boolean onDown(MotionEvent motionEvent) {
+        Type_It.setText("onDown");
+        return true;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent motionEvent) {
+        Type_It.setText("onShowPress");
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        Type_It.setText("onSingleTapUp");
+        return true;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        Type_It.setText("onScroll");
+        return true;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent motionEvent) {
+        Type_It.setText("onLongPress");
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        Type_It.setText("onFling");
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}
